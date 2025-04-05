@@ -16,6 +16,7 @@ Class Materia {
 Class Inscripcion {
     -alumno: Alumno
     -fecha: Date
+    -materiasInscriptas: List<Materia>
     +aprobada(materia: Materia): boolean
 }
 
