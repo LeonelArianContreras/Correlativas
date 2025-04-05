@@ -10,7 +10,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class InscripcionDeAlternativaCompletaTest {
-
+    // ToDo: Preguntar si hay que tomar en cuenta la repeticion de logica entre tests!
     private final Materia algoritmos = new Materia("AyED", true, null);
     private final Materia discretas = new Materia("LyED", true, null);
     private final Materia sypn = new Materia("SyPN", true, null);
