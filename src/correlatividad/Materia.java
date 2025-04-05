@@ -4,19 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Materia {
-    private String nombreMateria; // Agregado nomas
-    private String codigo; // Agregado nomas
-    private boolean esDePrimerAnio;
+    private String nombre; // Agregado
+    private final boolean esDePrimerAnio;
     private final List<Materia> correlativas;
 
-    public Materia(String nombreMateria, String codigo, boolean esDePrimerAnio, List<Materia> correlativas) {
-        this.nombreMateria = nombreMateria;
-        this.codigo = codigo;
+    public Materia(String nombre, boolean esDePrimerAnio, List<Materia> correlativas) {
+        this.nombre = nombre;
         this.esDePrimerAnio = esDePrimerAnio;
-        this.correlativas = esDePrimerAnio? new ArrayList<Materia>() : correlativas;
+        this.correlativas = esDePrimerAnio? new ArrayList<>() : correlativas;
     }
 
     public List<Materia> getCorrelativas() {
         return correlativas;
     }
+
 }

@@ -1,30 +1,28 @@
 @startuml
 
 Class Alumno {
-    -nombreAlumno: string
-    -legajo: string
-    -materiasInscriptas: List<Materia>
+    -nombre: String
+    -legajo: String
     -materiasAprobadas: List<Materia>
-
-    +preinscribirseA(unaMateria): void
-    +tieneCorrelativasAprobadas(List<Materia>): boolean
+    +tieneCorrelativasAprobadas(): boolean
 }
 
 Class Materia {
-    -nombreMateria: string
-    -codigo: string
-    -correlativas: List<Materia>
+    -nombre: String
+    -codigo: String
+    -materiasCorrelativas: List<Materia>
 }
 
 Class Inscripcion {
-    +aprobada(): boolean
+    -alumno: Alumno
+    -fecha: Date
+    +aprobada(materia: Materia): boolean
 }
 
-Inscripcion ..> Alumno
-Inscripcion ..> Materia
-Alumno --> Inscripcion
-Alumno --> Materia
-Materia --> Materia
+Alumno --* Inscripcion
+Materia --* Inscripcion
+Materia --> Materia : "*"
+Alumno --> Materia: "*"
 
 
 @enduml
