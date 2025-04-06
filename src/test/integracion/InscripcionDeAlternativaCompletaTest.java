@@ -2,12 +2,11 @@ package test.integracion; // No se muy bien si con integracion refiere a esto, p
 
 import correlatividad.Alumno;
 import correlatividad.Materia;
-import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class InscripcionDeAlternativaCompletaTest {
     // ToDo: Preguntar si hay que tomar en cuenta la repeticion de logica entre tests!
@@ -32,14 +31,14 @@ public class InscripcionDeAlternativaCompletaTest {
     @Test
     public void alternativaElegida() {
         Alumno alumno = new Alumno("Leonel", "213.613-2", materiasAprobadasDeLeo);
-        assertTrue("Alternativa elegida satisfactoriamente!",
-                alumno.puedoInscribirmeA(materiasAInscribirse));
+        Assertions.assertTrue(alumno.puedoInscribirmeA(materiasAInscribirse),
+                "Alternativa elegida satisfactoriamente!");
     }
 
     @Test
     public void alternativaNoElegida() {
         Alumno alumnoBurro = new Alumno("NN", "213.613-3", materiasAprobadasDeBurro);
-        assertFalse("Alternativa no elegida", alumnoBurro.puedoInscribirmeA(materiasAInscribirse));
+        Assertions.assertFalse(alumnoBurro.puedoInscribirmeA(materiasAInscribirse), "Alternativa no elegida");
     }
 
 }

@@ -2,11 +2,11 @@ package test.unitarios;
 
 import correlatividad.Alumno;
 import correlatividad.Materia;
-import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class InscripcionDeAlumnoConCorrelativas {
 
@@ -17,8 +17,8 @@ public class InscripcionDeAlumnoConCorrelativas {
     @Test
     public void alumnoPuedeAnotarseAMateriaSinCorrelativa() {
         Alumno alumno = new Alumno("Leonel", "213.613-2", List.of(algoritmos, discretas));
-        assertTrue("Alumno con las correlativas necesarias puede anotarse a una materia",
-                alumno.puedoInscribirmeA(List.of(pdep)));
+        Assertions.assertTrue(alumno.puedoInscribirmeA(List.of(pdep)),
+                "Alumno con las correlativas necesarias puede anotarse a una materia");
     }
 
 }
