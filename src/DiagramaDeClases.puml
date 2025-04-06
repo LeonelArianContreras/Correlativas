@@ -20,8 +20,8 @@ Class Inscripcion {
     +aprobada(materia: Materia): boolean
 }
 
-Alumno --* Inscripcion
-Materia --* Inscripcion
+Alumno --> Inscripcion
+Inscripcion --> Materia : "*"
 Materia --> Materia : "*"
 Alumno --> Materia: "*"
 
